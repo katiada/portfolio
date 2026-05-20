@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/projet.css" />
+  <script type="module">
+    import App from "./src/App.js";
+    App.main();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;700&family=Jost:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <title>Hathor — Katia DaSilva-Almeida</title>
+</head>
+
+<body>
+  <div id="interface">
+
+    <!-- Curseur personnalisé -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+
+    <header id="header"></header>
+
+
+    <main id="app">
+
+      <!-- ===== EN-TÊTE DU PROJET ===== -->
+      <section class="projet-entete">
+
+        <div class="projet-couverture">
+          <img src="./assets/images/Egypte_v3.jpg" alt="Hathor">
+        </div>
+
+        <div class="projet-infos reveal">
+          <a href="./index.html#projets" class="projet-retour">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+            Retour aux projets
+          </a>
+
+          <p class="projet-type">Illustration 2D</p>
+          <h1 class="projet-titre">Hathor</h1>
+          <p class="projet-annee-label">2024</p>
+
+          <div class="projet-tags">
+            <span class="tag">Adobe Photoshop</span>
+            <span class="tag">Adobe Illustrator</span>
+          </div>
+        </div>
+
+      </section>
+
+
+      <!-- ===== DESCRIPTION ===== -->
+      <section class="projet-description">
+        <div class="projet-desc-contenu reveal">
+          <p>
+            Illustration originale de la déesse égyptienne, mêlant symbolisme ancien et esthétique contemporaine
+            inspirée des vinyles.
+          </p>
+          <p>
+            J'ai assuré la <strong>direction artistique</strong> et la conception complète de ce projet, réalisé dans
+            le cadre de mon
+            cours de Design 2.
+          </p>
+        </div>
+      </section>
+
+
+      <!-- ===== GALERIE ===== -->
+      <section class="projet-galerie">
+
+        <div class="galerie-item reveal complet">
+          <video src="./assets/videos/egypte.mp4" muted loop autoplay playsinline></video>
+        </div>
+        <div class="galerie-item reveal complet">
+          <img src="./assets/images/Egypte_v1.jpg" alt="Version 1">
+        </div>
+        <div class="galerie-item reveal complet">
+          <img src="./assets/images/Egypte_v2.jpg" alt="Version 2">
+        </div>
+        <div class="galerie-item reveal complet">
+          <img src="./assets/images/Egypte_v3.jpg" alt="Hathor final">
+        </div>
+      </section>
+
+
+      <!-- Navigation entre projets -->
+      <nav class="projet-nav">
+        <a href="./les-elements.html" class="projet-nav-lien">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+          Projet précédent
+        </a>
+        <a href="./index.html#projets" class="projet-nav-centre">Tous les projets</a>
+        <a href="./matcha-legendes.html" class="projet-nav-lien">
+          Projet suivant
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </a>
+      </nav>
+
+    </main>
+
+
+    <footer id="footer"></footer>
+
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/projet.css" />
+  <script type="module">
+    import App from "./src/App.js";
+    App.main();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;700&family=Jost:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <title>Matcha & Légendes — Katia DaSilva-Almeida</title>
+</head>
+
+<body>
+  <div id="interface">
+
+    <!-- Curseur personnalisé -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+
+    <header id="header"></header>
+
+
+    <main id="app">
+
+      <!-- ===== EN-TÊTE DU PROJET ===== -->
+      <section class="projet-entete">
+
+        <div class="projet-couverture">
+          <img src="./assets/images/Titre.png" alt="Titre">
+        </div>
+
+        <div class="projet-infos reveal">
+          <a href="./index.html#projets" class="projet-retour">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+            Retour aux projets
+          </a>
+
+          <p class="projet-type">Jeu Unity</p>
+          <h1 class="projet-titre">Matcha & Légendes</h1>
+          <p class="projet-annee-label">2026</p>
+
+          <div class="projet-tags">
+            <span class="tag">Unity</span>
+            <span class="tag">C#</span>
+            <span class="tag">Ink</span>
+            <span class="tag">Procreate</span>
+            <span class="tag">Narration interactive</span>
+          </div>
+        </div>
+
+      </section>
+
+
+      <!-- ===== DESCRIPTION ===== -->
+      <section class="projet-description">
+        <div class="projet-desc-contenu reveal">
+          <p>
+            Jeu pédagogique 2D inspiré de la mythologie japonaise. Le joueur rencontre des personnages dans une
+            maison de thé empreinte de mystère. Il comprend une mécanique de dessin de kanjis permettant d'apprendre
+            l'ordre traditionnel du tracé ainsi que quelques kanjis associés à chaque histoire.
+          </p>
+          <p>
+            Ce jeu constituait mon projet de fin de technique. Je souhaitais mettre de l'avant mes <strong> talents
+              artistiques </strong> et mes<strong> compétences techniques</strong> en développant un jeu à la fois
+            pédagogique et
+            narratif.
+            J'ai relevé plusieurs défis, notamment l'intégration d'<strong>Ink</strong> pour la narration ainsi que la
+            programmation de la mécanique de tracé des kanjis.
+          </p>
+          <p>
+            Tous les éléments visuels ont été créés principalement avec Procreate, certains éléments ont été créés avec
+            Illustrator et Photoshop.
+          </p>
+        </div>
+      </section>
+
+
+      <!-- ===== GALERIE ===== -->
+      <section class="projet-galerie">
+
+        <div class="galerie-item reveal">
+          <video src="./assets/videos/Matcha&Legendes.mp4" muted loop autoplay playsinline></video>
+        </div>
+        <div class="galerie-item reveal">
+          <img src="./assets/images/Matcha_1.png" alt="Jin">
+        </div>
+        <div class="galerie-item reveal">
+          <img src="./assets/images/Matcha_2.png" alt="Kanji">
+        </div>
+        <div class="galerie-item reveal">
+          <img src="./assets/images/Matcha_3.png" alt="Tamamo">
+        </div>
+        <div class="galerie-item reveal">
+          <img src="./assets/images/Matcha_4.png" alt="Akui">
+        </div>
+
+      </section>
+
+
+      <!-- Navigation entre projets -->
+      <nav class="projet-nav">
+        <a href="./hathor.html" class="projet-nav-lien">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+          Projet précédent
+        </a>
+        <a href="./index.html#projets" class="projet-nav-centre">Tous les projets</a>
+        <a href="./a-travers-le-temps.html" class="projet-nav-lien">
+          Projet suivant
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </a>
+      </nav>
+
+    </main>
+
+
+    <footer id="footer"></footer>
+
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/projet.css" />
+  <script type="module">
+    import App from "./src/App.js";
+    App.main();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;700&family=Jost:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <title>Les archives oubliées — Katia DaSilva-Almeida</title>
+</head>
+
+<body>
+  <div id="interface">
+
+    <!-- Curseur personnalisé -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+
+    <header id="header"></header>
+
+
+    <main id="app">
+
+      <!-- ===== EN-TÊTE DU PROJET ===== -->
+      <section class="projet-entete">
+
+        <div class="projet-couverture">
+          <img src="./assets/images/FondFinal.png" alt="Les archives oubliées">
+        </div>
+
+        <div class="projet-infos reveal">
+          <a href="./index.html#projets" class="projet-retour">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+            Retour aux projets
+          </a>
+
+          <p class="projet-type">Jeu Unity</p>
+          <h1 class="projet-titre">Les archives oubliées</h1>
+          <p class="projet-annee-label">2025</p>
+
+          <div class="projet-tags">
+            <span class="tag">Unity</span>
+            <span class="tag">Procreate</span>
+            <span class="tag">BandLab</span>
+            <span class="tag">Suite Adobe</span>
+          </div>
+
+          <a href="https://tournoi.tim-cstj.ca/2025/j5/" target="_blank" rel="noopener" class="projet-lien-live">
+            Voir le projet
+          </a>
+        </div>
+
+      </section>
+
+
+      <!-- ===== DESCRIPTION ===== -->
+      <section class="projet-description">
+        <div class="projet-desc-contenu reveal">
+          <p>
+            Jeu Unity plateformeur dont j'ai assuré la direction artistique complète. J'ai pu exprimer
+            ma créativité
+            à travers l'animation, les sons, la musique et les particules. Le défi était de créer un univers en
+            parallaxe tout en maintenant une cohérence visuelle.
+          </p>
+          <p>
+            Ce projet a été réalisé en collaboration avec Dao-Li Leboeuf Roy.
+          </p>
+        </div>
+      </section>
+
+
+      <!-- ===== GALERIE ===== -->
+      <section class="projet-galerie">
+
+        <div class="galerie-item reveal">
+          <img src="./assets/images/Archives_titre.png" alt="Titre">
+        </div>
+        <div class="galerie-item reveal">
+          <img src="./assets/images/Archives_jeu.png" alt="Jeu">
+        </div>
+        <div class="galerie-item reveal">
+          <img src="./assets/images/Archives_interface.png" alt="Interface">
+        </div>
+      </section>
+
+
+      <!-- Navigation entre projets -->
+      <nav class="projet-nav">
+        <a href="./a-travers-le-temps.html" class="projet-nav-lien">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+          Projet précédent
+        </a>
+        <a href="./index.html#projets" class="projet-nav-centre">Tous les projets</a>
+        <a href="./izakaya-hiroshi.html" class="projet-nav-lien">
+          Projet suivant
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </a>
+      </nav>
+
+    </main>
+
+
+    <footer id="footer"></footer>
+
+  </div>
+</body>
+
+</html>

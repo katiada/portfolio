@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/projet.css" />
+  <script type="module">
+    import App from "./src/App.js";
+    App.main();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;700&family=Jost:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <title>À travers le temps — Katia DaSilva-Almeida</title>
+</head>
+
+<body>
+  <div id="interface">
+
+    <!-- Curseur personnalisé -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+
+    <header id="header"></header>
+
+
+    <main id="app">
+
+      <!-- ===== EN-TÊTE DU PROJET ===== -->
+      <section class="projet-entete">
+
+        <div class="projet-couverture">
+          <img src="./assets/images/ATraversLeTemps_sneak.png" alt="Titre">
+        </div>
+
+        <div class="projet-infos reveal">
+          <a href="./index.html#projets" class="projet-retour">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+            Retour aux projets
+          </a>
+
+          <p class="projet-type">Application Web</p>
+          <h1 class="projet-titre">À travers le temps</h1>
+          <p class="projet-annee-label">2025</p>
+
+          <div class="projet-tags">
+            <span class="tag">Next.js</span>
+            <span class="tag">React Flow</span>
+            <span class="tag">Turso</span>
+            <span class="tag">Vercel</span>
+          </div>
+
+          <a href="https://a-travers-le-temps.vercel.app" target="_blank" rel="noopener" class="projet-lien-live">
+            Voir le projet
+
+          </a>
+        </div>
+
+      </section>
+
+
+      <!-- ===== DESCRIPTION ===== -->
+      <section class="projet-description">
+        <div class="projet-desc-contenu reveal">
+          <p>
+            Application de narration interactive construite avec Next.js et React Flow. Le lecteur navigue dans un récit
+            ramifié à travers des choix historiques, avec persistance des décisions, système d'authentification complet
+            et déploiement sur Vercel.
+          </p>
+          <p>
+            Dans ce projet en collaboration avec Gabrielle Elemond-Beaudin, je me suis chargée du <strong>développement
+              back-end</strong>.
+          </p>
+        </div>
+      </section>
+
+
+      <!-- ===== GALERIE ===== -->
+      <section class="projet-galerie">
+
+        <div class="galerie-item reveal">
+          <video src="./assets/videos/ATraversLeTemps.mp4" muted loop autoplay playsinline></video>
+        </div>
+
+      </section>
+
+
+      <!-- Navigation entre projets -->
+      <nav class="projet-nav">
+        <a href="./matcha-legendes.html" class="projet-nav-lien">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+          Projet précédent
+        </a>
+        <a href="./index.html#projets" class="projet-nav-centre">Tous les projets</a>
+        <a href="./archives-oubliees.html" class="projet-nav-lien">
+          Projet suivant
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </a>
+      </nav>
+
+    </main>
+
+
+    <footer id="footer"></footer>
+
+  </div>
+</body>
+
+</html>

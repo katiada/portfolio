@@ -1,0 +1,813 @@
+/* =============================================
+   VARIABLES DE COULEUR
+   ============================================= */
+
+:root {
+  --cream: #F7F3ED;
+  --cream-profond: #EDE6DA;
+  --brun: #2C2118;
+  --brun-moyen: #6B5A4E;
+  --brun-clair: #9A8880;
+  --sable: #C9A87C;
+  --sauge: #8FA896;
+  --sauge-clair: #C0D4C8;
+  --mauve: #B49EB5;
+  --blush: #E5C8C0;
+  --encre: #181210;
+  --rouge-tampon: #B83A35;
+}
+
+
+/* =============================================
+   BASE
+   ============================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Jost', sans-serif;
+  background: var(--cream);
+  color: var(--brun);
+  font-size: 16px;
+  line-height: 1.7;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+
+/* =============================================
+   CURSEUR PERSONNALISÉ (seulement sur desktop)
+   ============================================= */
+
+@media (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
+
+  .cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--sable);
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.25s, height 0.25s, background 0.25s;
+    mix-blend-mode: multiply;
+  }
+
+  .cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1.5px solid var(--blush);
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s, border-color 0.3s;
+  }
+
+  .cursor-dot.survol {
+    width: 12px;
+    height: 12px;
+    background: var(--sauge);
+  }
+
+  .cursor-ring.survol {
+    width: 52px;
+    height: 52px;
+    border-color: var(--sauge);
+    opacity: 0.6;
+  }
+
+  .cursor-dot.clic {
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+
+  .cursor-ring.clic {
+    transform: translate(-50%, -50%) scale(0.85);
+  }
+}
+
+
+/* =============================================
+   BARRE DE PROGRESSION (scroll)
+   ============================================= */
+
+.barre-progression {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background: linear-gradient(to right, var(--blush), var(--sauge));
+  z-index: 200;
+  pointer-events: none;
+  transition: width 0.1s linear;
+}
+
+
+/* =============================================
+   NAVIGATION
+   ============================================= */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  pointer-events: none;
+  transition: background 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease;
+}
+
+header.defilé {
+  background: rgba(247, 243, 237, 0.88);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 rgba(44, 33, 24, 0.06);
+}
+
+.contenu-entete {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.75rem 5rem;
+  pointer-events: none;
+}
+
+.nav-logo {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--brun);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  pointer-events: all;
+}
+
+.contenu-entete nav ul {
+  display: flex;
+  gap: 2.75rem;
+  list-style: none;
+  pointer-events: all;
+}
+
+.contenu-entete nav ul a {
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--brun-moyen);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contenu-entete nav ul a:hover {
+  color: var(--brun);
+}
+
+
+/* =============================================
+   HERO
+   ============================================= */
+
+#hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 9rem 5rem 5rem;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+#conteneur-petales {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero-contenu {
+  position: relative;
+  z-index: 2;
+  max-width: 860px;
+}
+
+.hero-accroche {
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--sauge);
+  margin-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hero-accroche::before {
+  content: '';
+  display: inline-block;
+  width: 2.5rem;
+  height: 1px;
+  background: var(--sauge);
+}
+
+.hero-nom {
+  font-family: 'Shippori Mincho', serif;
+  font-size: clamp(5.5rem, 14vw, 11rem);
+  font-weight: 700;
+  line-height: 0.95;
+  color: var(--encre);
+  letter-spacing: -0.03em;
+  margin-bottom: 2.5rem;
+}
+
+.hero-nom .lettre {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.3em) rotate(3deg);
+  filter: blur(4px);
+  transition: opacity 0.5s ease, transform 0.5s ease, filter 0.5s ease;
+}
+
+.hero-nom .lettre.visible {
+  opacity: 1;
+  transform: translateY(0) rotate(0deg);
+  filter: blur(0);
+}
+
+.hero-sous-titre {
+  font-size: 1.15rem;
+  font-weight: 300;
+  color: var(--brun-moyen);
+  max-width: 500px;
+  line-height: 1.9;
+  margin-bottom: 3.5rem;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--brun);
+  text-decoration: none;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--sable);
+  transition: gap 0.35s ease, border-color 0.35s;
+}
+
+.hero-cta:hover {
+  gap: 1.4rem;
+  border-color: var(--brun);
+}
+
+.hanko {
+  position: absolute;
+  bottom: 4.5rem;
+  right: 5rem;
+  width: 4.5rem;
+  height: 4.5rem;
+  border: 2px solid var(--rouge-tampon);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Shippori Mincho', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--rouge-tampon);
+  transform: rotate(-6deg);
+  opacity: 0.55;
+  z-index: 2;
+  user-select: none;
+  letter-spacing: 0.05em;
+}
+
+.points-deco {
+  position: absolute;
+  bottom: 4rem;
+  right: 5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  z-index: 1;
+}
+
+.points-deco span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--cream-profond);
+}
+
+.petale {
+  position: absolute;
+  width: 9px;
+  height: 11px;
+  border-radius: 60% 0 60% 0;
+  animation: tomber linear infinite;
+  pointer-events: none;
+}
+
+@keyframes tomber {
+  0% {
+    transform: translateY(-30px) rotate(0deg) translateX(0);
+    opacity: 0;
+  }
+
+  8% {
+    opacity: 0.3;
+  }
+
+  50% {
+    transform: translateY(48vh) rotate(360deg) translateX(30px);
+  }
+
+  92% {
+    opacity: 0.15;
+  }
+
+  100% {
+    transform: translateY(100vh) rotate(720deg) translateX(-20px);
+    opacity: 0;
+  }
+}
+
+
+/* =============================================
+   SECTIONS (styles communs)
+   ============================================= */
+
+section {
+  padding: 8rem 5rem;
+}
+
+.section-entete {
+  display: flex;
+  align-items: baseline;
+  gap: 1.75rem;
+  margin-bottom: 5.5rem;
+}
+
+
+.section-titre {
+  font-family: 'Shippori Mincho', serif;
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+  font-weight: 600;
+  color: var(--encre);
+  letter-spacing: -0.01em;
+}
+
+.section-ligne {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, var(--cream-profond), transparent);
+}
+
+/* Sur fond cream-profond (section À propos), la ligne doit être plus foncée */
+#apropos .section-ligne {
+  background: linear-gradient(to right, var(--brun-clair), transparent);
+  opacity: 0.2;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.85s ease, transform 0.85s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+
+/* =============================================
+   À PROPOS
+   ============================================= */
+
+#apropos {
+  background: var(--cream-profond);
+}
+
+.apropos-grille {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 6rem;
+  align-items: start;
+}
+
+.photo-wrap {
+  position: relative;
+}
+
+.photo-cadre {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background: var(--sauge-clair);
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo-cadre img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-placeholder {
+  font-size: 1rem;
+  color: var(--sauge);
+  opacity: 0.5;
+}
+
+.photo-cadre::after {
+  content: '';
+  position: absolute;
+  inset: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 1px;
+  pointer-events: none;
+}
+
+.photo-badge {
+  position: absolute;
+  bottom: -1.1rem;
+  right: -1.1rem;
+  background: var(--blush);
+  padding: 0.45rem 1rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brun-moyen);
+  border-radius: 1px;
+}
+
+.bio p {
+  font-size: 1rem;
+  color: var(--brun-moyen);
+  line-height: 1.9;
+  margin-bottom: 1.4rem;
+}
+
+.bio p strong {
+  color: var(--brun);
+  font-weight: 500;
+}
+
+.ornement {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2.25rem 0;
+}
+
+.ornement::before,
+.ornement::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--cream);
+}
+
+.ornement span {
+  font-size: 0.9rem;
+  color: var(--sable);
+}
+
+.competences {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.5rem;
+}
+
+.competence {
+  padding: 0.3rem 0.85rem;
+  border: 1px solid var(--cream);
+  background: var(--cream);
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
+  color: var(--brun-moyen);
+  border-radius: 1px;
+  transition: background 0.25s, color 0.25s;
+}
+
+.competence:hover {
+  background: var(--sauge-clair);
+  color: var(--brun);
+}
+
+
+
+#projets {
+  background: var(--cream);
+  padding: 8rem 0;
+}
+
+#projets .section-entete {
+  padding: 0 5rem;
+  margin-bottom: 3rem;
+}
+
+.projets-grille {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+  padding: 0 5rem;
+}
+
+/* Élément de projet — lien cliquable */
+.projet-item {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  text-decoration: none;
+}
+
+/* Image de couverture */
+.projet-image {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease;
+}
+
+.projet-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+/* Overlay sombre au hover */
+.projet-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(24, 18, 16, 0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: background 0.4s ease;
+}
+
+.projet-nom {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--cream);
+  letter-spacing: 0.02em;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.projet-annee {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(247, 243, 237, 0.65);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.35s ease 0.05s, transform 0.35s ease 0.05s;
+}
+
+/* États au hover */
+.projet-item:hover .projet-overlay {
+  background: rgba(24, 18, 16, 0.62);
+}
+
+.projet-item:hover .projet-image img {
+  transform: scale(1.04);
+}
+
+.projet-item:hover .projet-nom,
+.projet-item:hover .projet-annee {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* =============================================
+   CONTACT
+   ============================================= */
+
+#contact {
+  background: var(--encre);
+}
+
+#contact .section-titre {
+  color: var(--cream);
+}
+
+#contact .section-ligne {
+  background: linear-gradient(to right, rgba(247, 243, 237, 0.1), transparent);
+}
+
+.contact-grille {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.contact-intro {
+  font-family: 'Shippori Mincho', serif;
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--cream);
+  margin-bottom: 1.5rem;
+}
+
+.contact-intro em {
+  font-style: normal;
+  color: var(--sauge-clair);
+}
+
+.contact-note {
+  font-size: 0.88rem;
+  color: rgba(247, 243, 237, 0.4);
+  margin-bottom: 2.75rem;
+  line-height: 1.7;
+}
+
+.contact-liste {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.contact-item label {
+  display: block;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--sauge);
+  margin-bottom: 0.3rem;
+}
+
+.contact-item a {
+  color: var(--cream);
+  text-decoration: none;
+  font-size: 0.95rem;
+  border-bottom: 1px solid rgba(247, 243, 237, 0.12);
+  padding-bottom: 0.2rem;
+  transition: color 0.3s, border-color 0.3s;
+}
+
+.contact-item a:hover {
+  color: var(--sauge-clair);
+  border-color: var(--sauge);
+}
+
+.contact-deco {
+  font-size: clamp(7rem, 14vw, 11rem);
+  font-weight: 700;
+  color: rgba(247, 243, 237, 0.04);
+  line-height: 1;
+  user-select: none;
+  text-align: right;
+}
+
+
+/* =============================================
+   FOOTER
+   ============================================= */
+
+footer {
+  background: var(--encre);
+  border-top: 1px solid rgba(247, 243, 237, 0.05);
+}
+
+.contenu-footer {
+  padding: 1.75rem 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-nom {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgba(247, 243, 237, 0.5);
+  letter-spacing: 0.08em;
+}
+
+.liens-footer ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.liens-footer a {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(247, 243, 237, 0.35);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.liens-footer a:hover {
+  color: var(--sauge-clair);
+}
+
+.footer-annee {
+  font-size: 0.72rem;
+  color: rgba(247, 243, 237, 0.2);
+  letter-spacing: 0.06em;
+}
+
+
+/* =============================================
+   RESPONSIVE (mobile)
+   ============================================= */
+
+@media (max-width: 960px) {
+  .contenu-entete {
+    padding: 1.5rem 2.5rem;
+  }
+
+  .contenu-entete nav {
+    display: none;
+  }
+
+  section {
+    padding: 6rem 2.5rem;
+  }
+
+  #hero {
+    padding: 9rem 2.5rem 5rem;
+  }
+
+  .hanko {
+    right: 2.5rem;
+  }
+
+  .apropos-grille {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .projets-grille {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-grille {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .contact-deco {
+    display: none;
+  }
+
+  .lb-panneau {
+    max-height: 95vh;
+  }
+
+  .lb-corps {
+    padding: 1.75rem;
+  }
+
+  .lb-titre {
+    font-size: 1.6rem;
+  }
+
+  .contenu-footer {
+    padding: 1.5rem 2.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}

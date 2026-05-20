@@ -1,0 +1,286 @@
+/* =============================================
+   STYLES DES PAGES DE PROJET
+   ============================================= */
+
+/* Tags sur la page projet */
+.projet-infos .tag {
+  background: var(--cream-profond);
+  color: var(--brun-moyen);
+  border: 1px solid var(--cream-profond);
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
+  padding: 0.3rem 0.85rem;
+}
+
+.projet-infos .tag:hover {
+  background: var(--sauge-clair);
+  border-color: var(--sauge-clair);
+  color: var(--brun);
+}
+
+
+/* ===== EN-TÊTE ===== */
+
+.projet-entete {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+
+/* Couverture (image de gauche) */
+.projet-couverture {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.projet-couverture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.couverture-placeholder {
+  width: 100%;
+  height: 100%;
+}
+
+/* Infos (colonne de droite) */
+.projet-infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8rem 5rem;
+  background: var(--cream);
+}
+
+.projet-retour {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--brun-clair);
+  text-decoration: none;
+  margin-bottom: 3rem;
+  transition: color 0.3s;
+}
+
+.projet-retour:hover {
+  color: var(--brun);
+}
+
+.projet-type {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--sauge);
+  margin-bottom: 1rem;
+}
+
+.projet-titre {
+  font-family: 'Shippori Mincho', serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  color: var(--encre);
+  line-height: 1.1;
+  margin-bottom: 0.75rem;
+}
+
+.projet-annee-label {
+  font-size: 0.85rem;
+  color: var(--brun-clair);
+  letter-spacing: 0.1em;
+  margin-bottom: 2rem;
+}
+
+.projet-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Lien vers le projet en ligne */
+.projet-lien-live {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--brun);
+  text-decoration: none;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--sable);
+  width: fit-content;
+  transition: border-color 0.3s;
+}
+
+.projet-lien-live:hover {
+  border-color: var(--brun);
+}
+
+
+/* ===== DESCRIPTION ===== */
+
+.projet-description {
+  background: var(--cream-profond);
+  padding: 7rem 5rem;
+}
+
+.projet-desc-contenu {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.projet-desc-contenu p {
+  font-size: 1.05rem;
+  color: var(--brun-moyen);
+  line-height: 1.9;
+  margin-bottom: 1.5rem;
+}
+
+
+/* ===== GALERIE ===== */
+
+.projet-galerie {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3px;
+  background: var(--cream);
+}
+
+.galerie-item {
+  aspect-ratio: unset;
+  overflow: hidden;
+  background: var(--cream-profond);
+}
+
+.galerie-item img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.galerie-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.galerie-placeholder {
+  width: 100%;
+  height: 100%;
+}
+
+/* Pour afficher une image complète sans recadrage */
+.galerie-item.complet {
+  aspect-ratio: unset;
+  height: auto;
+}
+
+.galerie-item.complet img {
+  object-fit: contain;
+  height: auto;
+  background: var(--cream-profond);
+}
+
+/* Premier item prend toute la largeur */
+.galerie-item:first-child {
+  grid-column: 1 / -1;
+  /* aspect-ratio: 16 / 7; */
+}
+
+/* Pour afficher une image complète sans recadrage sur le premier item */
+.galerie-item:first-child.complet {
+  aspect-ratio: unset;
+  height: auto;
+}
+
+.galerie-item:first-child.complet img {
+  object-fit: contain;
+  height: auto;
+  background: var(--cream-profond);
+}
+
+
+/* ===== NAVIGATION ENTRE PROJETS ===== */
+
+.projet-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.5rem 5rem;
+  border-top: 1px solid var(--cream-profond);
+  background: var(--cream);
+}
+
+.projet-nav-lien {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--brun-moyen);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.projet-nav-lien:hover {
+  color: var(--brun);
+}
+
+.projet-nav-centre {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--brun-clair);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.projet-nav-centre:hover {
+  color: var(--brun);
+}
+
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 960px) {
+  .projet-entete {
+    grid-template-columns: 1fr;
+  }
+
+  .projet-couverture {
+    position: relative;
+    height: 55vw;
+    min-height: 280px;
+  }
+
+  .projet-infos {
+    padding: 4rem 2.5rem;
+  }
+
+  .projet-description {
+    padding: 5rem 2.5rem;
+  }
+
+  .projet-galerie {
+    grid-template-columns: 1fr;
+  }
+
+  .galerie-item:first-child {
+    grid-column: 1;
+    aspect-ratio: 16 / 10;
+  }
+
+  .projet-nav {
+    padding: 2rem 2.5rem;
+  }
+}
