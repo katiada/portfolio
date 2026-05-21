@@ -291,4 +291,14 @@
   .projet-nav {
     padding: 2rem 2.5rem;
   }
+
+  .projet-nav-lien {
+    font-size: 0;
+    gap: 0;
+  }
+
+  .projet-nav-lien svg {
+    width: 20px;
+    height: 20px;
+  }
 }
