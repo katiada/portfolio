@@ -892,6 +892,10 @@ header:not(.defilé) .hamburger span {
     padding: 0 1.5rem;
   }
 
+  #projets .section-entete {
+    padding: 0 1.5rem;
+  }
+
   .contact-grille {
     grid-template-columns: 1fr;
     gap: 3.5rem;
