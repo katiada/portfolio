@@ -535,7 +535,6 @@ section {
 #projets {
   background: var(--cream);
   padding: 8rem 0;
-  border-top: 2px solid var(--sauge-clair);
 }
 
 #projets .section-entete {
