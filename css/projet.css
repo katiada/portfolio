@@ -261,10 +261,12 @@
     position: relative;
     height: 55vw;
     min-height: 280px;
+    order: 2;
   }
 
   .projet-infos {
     padding: 4rem 2.5rem;
+    order: 1;
   }
 
   .projet-description {
@@ -277,7 +279,13 @@
 
   .galerie-item:first-child {
     grid-column: 1;
-    aspect-ratio: 16 / 10;
+    aspect-ratio: unset;
+  }
+
+  .galerie-item video {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
   }
 
   .projet-nav {
