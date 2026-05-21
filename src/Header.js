@@ -54,9 +54,12 @@ const Header = {
       header.classList.add("defilé");
     }
 
+    // Déclarer hamburger et menuMobile avant le listener de scroll
+    const hamburger = document.getElementById("hamburger");
+    const menuMobile = document.getElementById("menu-mobile");
+
     // Fond au scroll
     window.addEventListener("scroll", () => {
-      // Ne pas changer le header si le menu mobile est ouvert
       if (menuMobile && menuMobile.classList.contains("ouvert")) return;
 
       if (window.scrollY > 80) {
@@ -67,9 +70,6 @@ const Header = {
     }, { passive: true });
 
     // Hamburger toggle
-    const hamburger = document.getElementById("hamburger");
-    const menuMobile = document.getElementById("menu-mobile");
-
     hamburger.addEventListener("click", () => {
       hamburger.classList.toggle("ouvert");
       menuMobile.classList.toggle("ouvert");
