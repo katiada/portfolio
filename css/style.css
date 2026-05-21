@@ -285,8 +285,8 @@ header.defilé {
   position: absolute;
   bottom: 4.5rem;
   right: 5rem;
-  width: 4.5rem;
-  height: 4.5rem;
+  width: 5.5rem;
+  height: 5.5rem;
   border: 2px solid var(--rouge-tampon);
   border-radius: 3px;
   display: flex;
@@ -369,6 +369,12 @@ section {
   margin-bottom: 5.5rem;
 }
 
+.section-num {
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  color: var(--sauge);
+  font-weight: 400;
+}
 
 .section-titre {
   font-family: 'Shippori Mincho', serif;
@@ -384,10 +390,8 @@ section {
   background: linear-gradient(to right, var(--cream-profond), transparent);
 }
 
-/* Sur fond cream-profond (section À propos), la ligne doit être plus foncée */
 #apropos .section-ligne {
-  background: linear-gradient(to right, var(--brun-clair), transparent);
-  opacity: 0.2;
+  background: linear-gradient(to right, rgba(44, 33, 24, 0.15), transparent);
 }
 
 .reveal {
@@ -524,10 +528,14 @@ section {
 }
 
 
+/* =============================================
+   PROJETS — GRILLE STYLE ADOBE PORTFOLIO
+   ============================================= */
 
 #projets {
   background: var(--cream);
   padding: 8rem 0;
+  border-top: 2px solid var(--sauge-clair);
 }
 
 #projets .section-entete {
@@ -537,8 +545,8 @@ section {
 
 .projets-grille {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 5px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
   padding: 0 5rem;
 }
 
@@ -626,6 +634,10 @@ section {
 
 #contact .section-titre {
   color: var(--cream);
+}
+
+#contact .section-num {
+  color: var(--sauge);
 }
 
 #contact .section-ligne {
@@ -750,6 +762,94 @@ footer {
 }
 
 
+/* Hamburger — caché sur desktop */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  pointer-events: all;
+  z-index: 9999;
+  position: relative;
+}
+
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--brun);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease, background 0.3s ease;
+}
+
+/* Sur le hero (pas encore scrollé), les lignes sont en sauge pour être visibles */
+header:not(.defilé) .hamburger span {
+  background: var(--sauge);
+}
+
+/* Animation croix */
+.hamburger.ouvert span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.ouvert span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.ouvert span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Menu mobile — caché par défaut */
+.menu-mobile {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--cream);
+  z-index: 9990;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  overflow: hidden;
+}
+
+.menu-mobile.ouvert {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.menu-mobile ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.menu-mobile a {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--encre);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: color 0.3s;
+}
+
+.menu-mobile a:hover {
+  color: var(--sauge);
+}
+
+
 /* =============================================
    RESPONSIVE (mobile)
    ============================================= */
@@ -761,6 +861,14 @@ footer {
 
   .contenu-entete nav {
     display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .menu-mobile {
+    display: flex;
   }
 
   section {

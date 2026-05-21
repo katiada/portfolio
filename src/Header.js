@@ -18,6 +18,7 @@ const Header = {
     header.innerHTML = `
       <div class="contenu-entete">
         <a href="${ancre}hero" class="nav-logo">KD/A</a>
+
         <nav>
           <ul>
             <li><a href="${ancre}hero">Accueil</a></li>
@@ -28,6 +29,23 @@ const Header = {
             <li><a href="${base}assets/DaSilva-Almeida_Katia_CV.pdf" target="_blank">CV</a></li>
           </ul>
         </nav>
+
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <div class="menu-mobile" id="menu-mobile">
+        <ul>
+          <li><a href="${ancre}hero">Accueil</a></li>
+          <li><a href="${ancre}projets">Projets</a></li>
+          <li><a href="${ancre}apropos">À propos</a></li>
+          <li><a href="${ancre}contact">Contact</a></li>
+          <li><a href="https://katiad-a.pixieset.com/" target="_blank" rel="noopener">Galerie</a></li>
+          <li><a href="${base}assets/DaSilva-Almeida_Katia_CV.pdf" target="_blank">CV</a></li>
+        </ul>
       </div>
     `;
 
@@ -36,14 +54,34 @@ const Header = {
       header.classList.add("defilé");
     }
 
-    // Ajouter la classe "defilé" quand on scroll sous le hero
+    // Fond au scroll
     window.addEventListener("scroll", () => {
+      // Ne pas changer le header si le menu mobile est ouvert
+      if (menuMobile && menuMobile.classList.contains("ouvert")) return;
+
       if (window.scrollY > 80) {
         header.classList.add("defilé");
       } else {
-        header.classList.remove("defilé");
+        if (estSurIndex) header.classList.remove("defilé");
       }
     }, { passive: true });
+
+    // Hamburger toggle
+    const hamburger = document.getElementById("hamburger");
+    const menuMobile = document.getElementById("menu-mobile");
+
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("ouvert");
+      menuMobile.classList.toggle("ouvert");
+    });
+
+    // Fermer le menu au clic sur un lien
+    menuMobile.querySelectorAll("a").forEach((lien) => {
+      lien.addEventListener("click", () => {
+        hamburger.classList.remove("ouvert");
+        menuMobile.classList.remove("ouvert");
+      });
+    });
   }
 
 };
